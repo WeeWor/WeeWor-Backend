@@ -13,7 +13,11 @@ module.exports = {
       required: true,
       unique: true
     },
-    name: {
+    name_th: {
+      type: 'string',
+      required: true
+    },
+    name_en: {
       type: 'string',
       required: true
     },

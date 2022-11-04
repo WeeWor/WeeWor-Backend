@@ -7,6 +7,8 @@
 
 module.exports = {
 
+  schema: true,
+
   attributes: {
     name: {
       type: 'string',
@@ -18,8 +20,7 @@ module.exports = {
       required: true
     },
     phone: {
-      type: 'string',
-      required: true
+      type: 'string'
     },
     address: {
       type: 'string',

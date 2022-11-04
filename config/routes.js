@@ -12,4 +12,9 @@ module.exports.routes = {
   'POST /register' : 'AuthController.register',
   'POST /login' : 'AuthController.login',
   'GET /user' : 'AuthController.user',
+
+  'POST /unit/nearby' : 'UnitController.nearby',
+  'POST /unit/search' : 'UnitController.search',
+
+  //'GET /test' : 'TestController.test',
 };
