@@ -21,7 +21,7 @@ module.exports = {
     let province_id = await sails.models.province.findOne({name_en: province});
     let units = await sails.models.emergencyunit.find({
       where: {province_id: province_id.keyId},
-      select: ['name', 'service', 'phone', 'address', 'province_id', 'district_id', 'latitude', 'longitude']
+      select: ['name', 'service', 'province_id', 'district_id', 'latitude', 'longitude']
     });
 
     units = await sails.helpers.sortLatlng(latitude, longitude, units);
@@ -47,11 +47,20 @@ module.exports = {
 
     let units = await sails.models.emergencyunit.find({
       where: whereFilter,
-      select: ['name', 'service', 'phone', 'address', 'province_id', 'district_id', 'latitude', 'longitude']
+      select: ['name', 'service', 'province_id', 'district_id', 'latitude', 'longitude']
     });
 
     units = await sails.helpers.sortLatlng(latitude, longitude, units);
     units = units.slice(0, 15);
+
+    return res.json(units);
+  },
+
+  detail: async function (req, res, next) {
+    let units = await sails.models.emergencyunit.findOne({
+      where: {id: req.param('id')},
+      select: ['name', 'service', 'phone', 'address', 'province_id', 'district_id', 'latitude', 'longitude']
+    });
 
     return res.json(units);
   }

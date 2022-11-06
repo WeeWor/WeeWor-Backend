@@ -15,6 +15,7 @@ module.exports.routes = {
 
   'POST /unit/nearby' : 'UnitController.nearby',
   'POST /unit/search' : 'UnitController.search',
+  'GET /unit/detail/:id' : 'UnitController.detail',
 
   //'GET /test' : 'TestController.test',
 };
