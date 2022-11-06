@@ -17,5 +17,7 @@ module.exports.routes = {
   'POST /unit/search' : 'UnitController.search',
   'GET /unit/detail/:id' : 'UnitController.detail',
 
+  'POST /location/address' : 'LocationController.address',
+
   //'GET /test' : 'TestController.test',
 };
