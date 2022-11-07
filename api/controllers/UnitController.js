@@ -25,7 +25,7 @@ module.exports = {
     });
 
     units = await sails.helpers.sortLatlng(latitude, longitude, units);
-    units = units.slice(0, 15);
+    units = units.slice(0, 5);
 
     return res.json(units);
   },
